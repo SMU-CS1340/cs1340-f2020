@@ -1,7 +1,7 @@
 ---
 title: Syllabus
-has_children: false
-nav_order: 1
+has_children: true
+nav_order: 2
 ---
 
 # CS 1340 - Intro to CS and DS in Python
@@ -11,23 +11,22 @@ Fall 2020 - SMUFlex Version
 
 ## Overview 
 
-Some cool stuff about 1340.
+This class introduces programming concepts using Python and its applications in computer science and data science. It
+is appropriate for anyone who is interested in using programming language to solve real world
+problems, especially data science problems.  Python is a great option for a first programming language, and we are going to cover some very common libraries as well, including [numpy](https://numpy.org/), [pandas](https://pandas.pydata.org/), [scikit-learn](https://scikit-learn.org/stable/) for data analysis.
 
-<!-- Welcome to Data Structures! During this semester, we will delve into the world of object oriented C++, data organization and access, and associated software development topics.  A major aspect of computer science is finding an efficient solution to a given problem that can be implemented on a computer.  We will explore some of the more intermediate and advanced parts of the C++ language and how they can be leveraged in construction and implementing various data structures and algorithms to operate on those data structures.  We will also begin to explore how data organization and access can enhance or inhibit the efficiency of a solution to a problem.  
-
-As a similar saying goes, programming languages are to computer science what hammers are to carpentry.  Programming is a tool that we use to communicate with a computer and express our solutions to problems. It is important to know how to use this tool efficiently to solve complex problems.  To get the most out of this class and ultimately to be successful, you must be willing to work hard. -->
 
 ## Instructor Info
 
 - Mark Fontenot, PhD.
 - Caruth 433
 - mfonten@lyle.smu.edu
-- markfontenot.net
+- [markfontenot.net](https://markfontenot.net)
 
 ## Course Info
 
 Lecture:
-- Tu Th 3:30 - 4:45
+- Tu Th 3:30 - 4:45 - Fondren 123
 
 
 ## Where to Find Info
@@ -40,40 +39,45 @@ Lecture:
 
 ## Catalog Description
 
-Emphasizes the object-oriented implementation of data structures, including linked lists, stacks, queues, sets, and binary trees.  The course covers object-oriented software engineering strategies and approaches to programming in interdisciplinary teams.
+Introduction to computer concepts, program structures, object-oriented programming, and interactive application development. Extensive programming projects emphasizing logical control structures and the use of libraries. 
 
 ### Prerequisite
 
-C- or better in CS 1342 or equivalent or permission of Dr. Fontenot
+No Pre-requisite for CS 1340
 
 ## Textbooks
 
-Shaffer, Cliff. *Data Structures and Algorithm Analysis, C++ version*, Edition 3.2, Dover publications.  Available in PDF at [Dr. Shaffer's Website](http://people.cs.vt.edu/~shaffer/Book)
 
-**Notes about Books** - I'm not a huge fan of textbooks.  I think they are overpriced and provide a false sense of security of the scope of a subject.  However, they are quite useful as an organized treatment of a topic.  It is important that you learn how to **figure things out** on your own.  For this reason, I typically don't follow any textbook very closely.  
+### Required
+We'll be using ZyBooks this semester.  ZyBooks is an interactive, web-based 'textbook'. The cost of the book is $77US. 
 
-HOWEVER - this is an interesting semester with the Pandemic and all.  So, I think there will be some added value in following a textbook closer than I usually would.  To some degree, the students in the class are distributed all over the world.  
+Here's how to sign up and get access to the book:
+1. Sign in or create an account at [learn.zybooks.com](learn.zybooks.com)
+2. Enter zyBook code: `SMUCS1340FontenotFall2020`
+3. Subscribe.
+
+### Optional
+
+Eric Matthes.  **Python Crash Course: A Hands-On, Project-Based Introduction to Programming, _2nd Edition_**.  No Starch Press, 2019, ISBN-10: 1-59327-928-0 
 
 ## Learning Outcomes
 
-1. Ability to properly handle dynamic memory management tasks in C++
-2. Ability to compare data structures and their algorithms analytically and experimentally
-3. Ability to implement a range of data structures including but not limited to linked lists, stacks, queues, binary search trees, hash tables, and heaps
-4. Ability to compare and contrast various comparison-based sorting algorithms
-5. Ability to decompose and solve large problems
-6. Ability to choose appropriate data structures to solve a problem
-7. Ability to design, implement, test, and debug classes in C++
+1. Understand the basic concepts of the Python Programming Language
+2. Learn basic data structures and algorithms associated with beginning programming
+3. Debug code 
+4. Read from and write to files
+5. Create programs for EDA in Python.
 
 ## Method of Evaluation
 
-The final course grade in CSE 2341 will be based on the performance of various deliverables such as implementation projects and homework assignments. Additionally, your attendance and active participation in lecture and lab will be reflected in your final grade.  The percentage breakdown is as follows:
+The final course grade in CSE 1340 will be based on the performance of various deliverables such as implementation projects and homework assignments. Additionally, your attendance and active participation in lecture and lab will be reflected in your final grade.  The percentage breakdown is as follows:
 
 
 | Tool                       | Percentage                                |
 |--------------------------- |-------------------------------------------|
-| Homeworks and Quizzes      | 20%                                       |
+| Homeworks and Quizzes      | 25%                                       |
 | Programming Projects       | 35%                                       |
-| Final Project              | 20%                                       |
+| Final Project              | 15%                                       |
 | Final Exam                 | 15%                                       |
 | Attendance & Participation | 10%                                       |
 
@@ -89,12 +93,12 @@ The due dates for all assignments will be explicitly stated on each assignment a
 | **D** |67 - 69 : D+  |          63 - 66 : D  |          60 - 62: D-  |
 | **F** |Below 60%     |                       |                       |
 
-### Additional Grading Stipulations
-In order to get a grade above D+ in this course, you must maintain a passing average (>= 60%) independently in the categories 1) Homeworks and Quizzes, 2) Programming Projects, and 3) Final Project. 
+
 
 ### Homework Assignments and Quizzes
 
-Homework assignments are assigned throughout the semester.  Quizzes may be announced or unannounced.  Homework assignments will be available via Canvas and/or will be handed out in class.  Each will clearly state the due date and method of submission.  
+Homework assignments are assigned throughout the semester.  Quizzes may be announced or unannounced.  
+All homework assignments will be available on the course website.  Each will clearly state the due date and method of submission.  
 
 ### Programming Projects
 
@@ -102,7 +106,7 @@ Nearly every week, you'll be working on some aspect of a programming assignment 
 
 Rather than penalize late submissions, you will be rewarded for early submissions.  Programming projects (except for the final semester project) will be eligible for 10% extra credit for submitting the project at least 48 hours early.  Recognizing that sometimes things happen at the last minute that are beyond our control, each student will get one (1) two-day (2-day) “free” extension - no questions asked.  This means you can submit this one project (except for the final semester project) up to 48 hours late.  
 
-If/when you want to use your one extension, send an email to Dr. Fontenot and TA Eli Laird.  The email should include your:    
+If/when you want to use your one extension, send an email to Dr. Fontenot.  The email should include your:    
  - Name, 
  - ID Number, and 
  - on which project you’re asking for an extension. 
