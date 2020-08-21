@@ -98,7 +98,7 @@ The due dates for all assignments will be explicitly stated on each assignment a
 ### Homework Assignments and Quizzes
 
 Homework assignments are assigned throughout the semester.  Quizzes may be announced or unannounced.  
-All homework assignments will be available on the course website.  Each will clearly state the due date and method of submission.  
+All homework assignments will be available on the course website.  Each will clearly state the due date and method of submission.  Homework assignments will also include completion of various activities in ZyBooks. 
 
 ### Programming Projects
 
