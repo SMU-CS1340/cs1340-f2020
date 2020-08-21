@@ -41,6 +41,8 @@ remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
 
+color_scheme: custom
+
 aux_links: 
   "markfontenot.net":
     - "//markfontenot.net"
