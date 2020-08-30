@@ -1,0 +1,434 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Linux Libertine O}
+  \setmonofont[]{DejaVu Sans Mono}
+\fi
+\usetheme[]{clean}
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={CS 1340:Fall 2020:Lecture 02},
+  pdfauthor={Mark Fontenot, PhD},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{longtable,booktabs}
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% \usepackage{libertine}
+% \usepackage[T1]{fontenc}
+
+\usepackage{enumitem}
+\usepackage{amsfonts}
+% level one
+\setlist[itemize,1]{label=$\bullet$}
+% level two
+\setlist[itemize,2]{label=$\circ$}
+% level three
+\setlist[itemize,3]{label=$\star$}
+
+% \usepackage{fontspec}
+% \setromanfont[Mapping=tex-text,Numbers=Lining]{Linux Libertine O}
+% \setmonofont[Scale=MatchLowercase]{DejaVu Sans Mono}
+% \usepackage[libertine]{newtxmath}
+
+\title{CS 1340:Fall 2020:Lecture 02}
+\subtitle{Intro to Python for CS and Data Science}
+\author{Mark Fontenot, PhD}
+\date{}
+\institute{Southern Methodist University}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Reminders}
+\protect\hypertarget{reminders}{}
+\begin{itemize}
+\tightlist
+\item
+  Slack
+\item
+  Zybooks (hopefully you did the assignment due before class today?)
+\item
+  Anaconda?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{All computer programs have}
+\protect\hypertarget{all-computer-programs-have}{}
+\begin{itemize}
+\tightlist
+\item
+  Input
+\item
+  Processing
+\item
+  Output
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Test}
+\protect\hypertarget{test}{}
+\begin{enumerate}
+\tightlist
+\item
+  item 1
+\item
+  item 2
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Welcome}
+\protect\hypertarget{welcome}{}
+\begin{itemize}
+\item
+  About me\ldots{}
+
+  Mark Fontenot, PhD
+
+  Caruth 433
+
+  mfonten@lyle.smu.edu
+
+  markfontenot.net
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bookmarks!}
+\protect\hypertarget{bookmarks}{}
+\textbf{Course Website}:
+\url{https://smu-cs1340.github.io/cs1340-f2020/}
+
+\textbf{Github}: \url{https://github.com} \emph{\ldots{} have you made
+your account yet?}
+
+\textbf{Canvas}, of course
+\end{frame}
+
+\begin{frame}[fragile]{Textbook}
+\protect\hypertarget{textbook}{}
+\begin{itemize}
+\tightlist
+\item
+  Python ZyBooks
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Interactive learning
+  \item
+    learn.zybooks.com
+  \item
+    ZyBook code for us: \texttt{SMUCS1340FontenotFall2020}
+  \item
+    Pay and subscribe
+  \end{itemize}
+\item
+  (Optional) Eric Matthes. \emph{Python Crash Course, 2nd edition}. No
+  Starch Press, 2019, ISBN-10: 1-59327-928-0
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Evaluation}
+\protect\hypertarget{evaluation}{}
+\begin{itemize}
+\tightlist
+\item
+  Final grades determined using standard 10pt scale.
+\end{itemize}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+Tool & Percentage\tabularnewline
+\midrule
+\endhead
+Homeworks and Quizzes & 25\%\tabularnewline
+Programming Projects & 35\%\tabularnewline
+Final Project & 15\%\tabularnewline
+Final Exam & 15\%\tabularnewline
+Attendance \& Participation & 10\%\tabularnewline
+\bottomrule
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Homework and Quizzes}
+\protect\hypertarget{homework-and-quizzes}{}
+\begin{itemize}
+\tightlist
+\item
+  Homework will be mostly related to ZyBooks Exercises
+\item
+  Quizzes maybe administered in lecture or lab.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Programming Projects}
+\protect\hypertarget{programming-projects}{}
+\begin{itemize}
+\tightlist
+\item
+  Learn by doing!
+\item
+  If you've never programmed before, don't worry! We will guide you!
+\item
+  10\% bonus credit for submitting 48 hours early.
+\item
+  Everyone gets one 2-day free extension, no questions asked.\\
+\item
+  You need to plan for at least a few hours of work per week outside of
+  lecture and lab
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Attendance}
+\protect\hypertarget{attendance}{}
+\begin{itemize}
+\item
+  You'll need to attend class to be successful.
+\item
+  I'll talk about things that aren't necessarily in ZyBooks.
+\item
+  If you're attending virtually:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Turn your camera on and microphone off
+  \item
+    Please be mostly vertical (aka. not in bed)
+  \item
+    Please be dressed as you would if attending class in person.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Academic Ethics}
+\protect\hypertarget{academic-ethics}{}
+\begin{itemize}
+\tightlist
+\item
+  You must be prepared to defend any code or assignment that you
+  submit.\\
+\item
+  DO NOT ever share your code with anyone. DO NOT, DO NOT, DO NOT!!!
+\item
+  You are encouraged to talk about the assignments at an abstract level.
+  However, you cannot share your solutions with another student.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General Comments}
+\protect\hypertarget{general-comments}{}
+\begin{itemize}
+\tightlist
+\item
+  Wear a face mask at all times
+\item
+  Try and keep your phone from dominating your attention.
+\item
+  Don't surf r/memes or other sites that may be distracting to those
+  sitting around you
+\item
+  Ostentatious yawning is a huge pet peeve\ldots{}
+\end{itemize}
+\end{frame}
+
+\hypertarget{the-course}{%
+\section{the course}\label{the-course}}
+
+\begin{frame}{Apps}
+\protect\hypertarget{apps}{}
+\begin{quote}
+Besides the boring and obvious \ldots{}
+\end{quote}
+
+What's your favorite app? OR What app do you use the most?
+\end{frame}
+
+\begin{frame}{Question}
+\protect\hypertarget{question}{}
+Have you ever coded before?
+
+\note{ 
+    What does it mean to code? 
+    What's an algorithm? 
+}
+\end{frame}
+
+\begin{frame}{What are we going to cover?}
+\protect\hypertarget{what-are-we-going-to-cover}{}
+\begin{itemize}
+\tightlist
+\item
+  Computational thinking (huh?)
+\item
+  The Python Programming Language
+\item
+  Basic Python for Data Science Applications
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Algorithm}
+\protect\hypertarget{algorithm}{}
+\begin{quote}
+What's an Algorithm?
+\end{quote}
+\end{frame}
+
+\begin{frame}{Computers Do Exactly What You Tell them To}
+\protect\hypertarget{computers-do-exactly-what-you-tell-them-to}{}
+\href{https://www.youtube.com/watch?v=Ct-lOOUqmyY}{The Exact Instruction
+Challenge}
+\end{frame}
+
+\begin{frame}{A Program}
+\protect\hypertarget{a-program}{}
+\begin{itemize}
+\tightlist
+\item
+  What's a computer program?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What do I expect you to know?}
+\protect\hypertarget{what-do-i-expect-you-to-know}{}
+\begin{itemize}
+\tightlist
+\item
+  You should know how to use your computer.
+\item
+  How to use the file browser on your computer.
+\item
+  How to Google!
+\item
+  How not to meltdown when something doesn't work :)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Getting Set up for Python}
+\protect\hypertarget{getting-set-up-for-python}{}
+\textbf{Anaconda}
+
+\begin{itemize}
+\item
+  Anaconda Python is a particular distribution of the language plus
+  bunches of other tools
+\item
+  Makes it a snap to install on multiple platforms
+\item
+  Go to \url{https://www.anaconda.com/products/individual}, scroll to
+  the bottom, and choose the installer for your platform.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    More platform-specific instructions:
+    \url{https://docs.anaconda.com/anaconda/install/}
+  \end{itemize}
+\item
+  Open Anaconda Navigator to verify it was installed.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{To Do:}
+\protect\hypertarget{to-do}{}
+\begin{itemize}
+\tightlist
+\item
+  Register for Slack and the \textbf{\#20f-1340-general} channel.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Add a profile picture!
+  \end{itemize}
+\item
+  Install Anaconda!
+\item
+  Read Chapter 1 of ZyBooks before Thursday's class. \emph{(I'll send
+  out some more specific directions on the various exercises tomorrow.)}
+\end{itemize}
+\end{frame}
+
+\end{document}

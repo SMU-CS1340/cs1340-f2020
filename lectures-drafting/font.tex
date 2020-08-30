@@ -1,0 +1,23 @@
+% \usepackage{libertine}
+% \usepackage[T1]{fontenc}
+
+% \usepackage{enumitem}
+% \usepackage{amsfonts}
+% % level one
+% \setlist[itemize,1]{label=$\bullet$}
+% % level two
+% \setlist[itemize,2]{label=$\circ$}
+% % level three
+% \setlist[itemize,3]{label=$\star$}
+
+% \usepackage{fontspec}
+% \setromanfont[Mapping=tex-text,Numbers=Lining]{Linux Libertine O}
+% \setmonofont[Scale=MatchLowercase]{DejaVu Sans Mono}
+% \usepackage[libertine]{newtxmath}
+
+\setbeamertemplate{itemize items}[circle]
+
+\usepackage{tcolorbox}
+\newtcolorbox{myquote}{colback=blue!5!white, colframe=blue!5!white}
+
+\renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
