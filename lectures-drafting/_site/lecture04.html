@@ -1,0 +1,180 @@
+<h1 id="highlights-from-remainder-of-ch-1">Highlights from Remainder of Ch 1</h1>
+
+<h2 id="whitespace">Whitespace</h2>
+
+<ul>
+  <li>Programming requires precision in the way you “say” things to Python</li>
+  <li>Code Formatting can be:
+    <ul>
+      <li>required by the Python language</li>
+      <li>suggested by convention of the Python language</li>
+    </ul>
+  </li>
+  <li>For some activities, ZyBooks will be strict about output formatting as well
+    <ul>
+      <li>yes, including whitespace</li>
+    </ul>
+  </li>
+  <li>Whitespace comes in two forms:
+    <ul>
+      <li>vertical (mentioned this last class)</li>
+      <li>horizontal</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p>```{.python .run}</p>
+<h1 id="vertical-whitespace">Vertical WhiteSpace</h1>
+<p>hourly_wage = 22
+hours_week_01 = 12
+hours_week_02 = 15
+hours_week_03 = 11</p>
+
+<p>pre_tax = (hours_week_01 + hours_week_02 + hours_week_03) * hourly_wage
+print(‘Before taxes, you earned’, pre_tax)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+## Precision precision precision!
+
+- You've got to pay attention to detail
+  - _yes... even if you aren't a **detail** person_
+- If things look very similar to you, 
+  - then they are still VERY different to the computer
+  - Examples:
+    - `=` vs `==` 
+    - counting from 1 to 10 and counting from 0 to 10 are very different to a computer
+
+
+## The Python Documentation Tour
+
+[Python 3 Official Documentation](https://docs.python.org/3/)
+
+# New Stuff
+
+## Data Types 
+
+- Numeric
+  - integer
+  - floating point number (number with a fractional component)
+- String
+- List
+- Dictionary
+- Set
+- Tuple
+
+## Data Types
+
+- Every 'thing' in a Python program has a **Data Type**
+- You can think of it as **metadata** describing what operations I can perform on it
+  
+```python
+someVar1 = '123'
+someVar2 = 123
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">'123'</code> is a string
+    <ul>
+      <li>You can’t perform mathematical ops on a string… doesn’t make any sense.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">123</code> is an integer</li>
+</ul>
+
+<h2 id="input-and-type-conversion"><code class="language-plaintext highlighter-rouge">input()</code> and Type Conversion</h2>
+
+<ul>
+  <li>You can use use the <code class="language-plaintext highlighter-rouge">int(...)</code> function to convert from string to integer.
+    <ul>
+      <li>Technical term: <strong>casting</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'How old are you? '</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>Note the alternative way of calling the <code class="language-plaintext highlighter-rouge">input()</code> function</em></li>
+  <li><code class="language-plaintext highlighter-rouge">type(...)</code> will tell you the data type of the thing in parens.</li>
+  <li>If you run this, even if you enter an integer for age, the type will be <code class="language-plaintext highlighter-rouge">'str'</code></li>
+</ul>
+
+<h2 id="more-on-type">More on Type</h2>
+<p>\columnsbegin
+\column{.5\textwidth}</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var01</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">var02</span> <span class="o">=</span> <span class="s">'Mark'</span>
+<span class="n">var03</span> <span class="o">=</span> <span class="mf">3.1415</span> 
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var01</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var02</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var03</span><span class="p">))</span>
+</code></pre></div></div>
+<p>\column{.5\textwidth}
+<strong>Output:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
+&lt;class 'str'&gt;
+&lt;class 'float'&gt;
+</code></pre></div></div>
+<p>\columnsend</p>
+
+<h2 id="3-fundamental-constructs-in-all-programming">3 Fundamental Constructs in all Programming</h2>
+
+<ol>
+  <li>Sequential Execution (What you’ve been doing so far)</li>
+  <li>Conditional Execution</li>
+  <li>Repetitive Execution</li>
+</ol>
+
+<h2 id="conditional-execution">Conditional Execution</h2>
+
+<ul>
+  <li>only execute a block of code <strong>if some condition is true</strong>.</li>
+  <li>Conditional Execution is sometimes called <strong>branching</strong></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">some_condition</span><span class="p">:</span>
+    <span class="n">statement1</span>
+    <span class="n">statement2</span>
+    <span class="p">...</span>
+<span class="k">elif</span> <span class="n">some_other_condition</span><span class="p">:</span>
+    <span class="n">statement3</span>
+    <span class="n">statement4</span>
+    <span class="p">...</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">statement5</span>
+    <span class="n">statement6</span>
+</code></pre></div></div>
+
+<h2 id="conditional-example-aka-if-statement">Conditional Example (a.k.a. if statement)</h2>
+
+<p>\columnsbegin
+\column{.5\textwidth}</p>
+
+<p>```{.python .run}
+final_grade = 93</p>
+
+<p>if final_grade &gt;= 97:
+    print(‘You earned an A+!’)
+elif final_grade &gt;= 93:
+    print(‘You earned an A!’)
+elif final_grade &gt;= 90:
+    print(‘You earned an A-!’)
+else:
+    print(‘Better luck next time!’)
+```</p>
+
+<p>\column{.5\textwidth}</p>
+
+<ul>
+  <li><strong>condition</strong> - a <strong>test</strong> that is either true or false</li>
+  <li><strong>relational operators</strong> -
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&gt;=</code>, <code class="language-plaintext highlighter-rouge">&lt;=</code>, <code class="language-plaintext highlighter-rouge">==</code> &lt;– work with numerical data</li>
+    </ul>
+  </li>
+</ul>
+
+<p>\columnsend</p>

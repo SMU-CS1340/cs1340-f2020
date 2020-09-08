@@ -1,0 +1,249 @@
+<h1 id="finishing-up-slides-from-thursday">Finishing up Slides from Thursday</h1>
+
+<h2 id="basic-output">Basic Output</h2>
+
+<p><code class="language-plaintext highlighter-rouge">print(...)</code></p>
+
+<ul>
+  <li>Notice:
+    <ul>
+      <li>printed in mono-spaced font</li>
+      <li>… means other stuff will be put there</li>
+      <li>() indicate a method or function call</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-{.python}">print('Hello')
+print('World')
+print('Hello World')
+</code></pre>
+<p><code class="language-plaintext highlighter-rouge">'Hello'</code>, <code class="language-plaintext highlighter-rouge">'World'</code> are called <strong>string literals</strong>.</p>
+
+<h2 id="print"><code class="language-plaintext highlighter-rouge">print(...)</code></h2>
+
+<pre><code class="language-{.python}">name = 'Mark'
+print(name)
+</code></pre>
+
+<ul>
+  <li>You can print <strong>string literals</strong> OR values contained in variables.</li>
+  <li>What is the variable in this example?</li>
+</ul>
+
+<p>```{.python .run}
+print(‘Hello’, end=’’)
+print(‘World’, end=’’)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- Note there is nothing between the open and close single quote
+
+## Can you do it?
+
+&gt; Use print statements to draw a diamond shape. 
+
+\vspace{1cm}
+
+&gt; Use print statements to draw a heart shape.
+
+# New Stuff
+
+## Printing On Different Lines
+
+- Options:
+  - use separate `print()` statements
+  - embed `\n` in string literal
+
+```python
+    print('Hello')
+    print('World')
+    print('Hello\nWorld')
+
+</code></pre></div></div>
+
+<h2 id="printing-variable-vs-string-literal">Printing Variable vs String Literal</h2>
+
+<p>```{.python .run}</p>
+
+<p>roomNumber = 123
+print(‘Our room number is’, end=’ ‘)
+print(roomNumber, end=’ ‘)
+print(‘in Fondren.’)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+## Printing Multiple things with `print(...)`
+  
+```{.python .run}
+age = 19
+print('I\'m currently', age, 'years old.')
+age = age + 1
+print('On my next birthday, I will be', age, 'years old.')
+</code></pre></div></div>
+<p>\vspace{.5cm}</p>
+
+<h1 id="input">Input</h1>
+
+<h2 id="basic-keyboard-input">Basic Keyboard Input</h2>
+
+<ul>
+  <li>use the <code class="language-plaintext highlighter-rouge">input()</code> function to read from the keyboard (sometimes called <code class="language-plaintext highlighter-rouge">standard input</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">input()</code> returns a string (sequence of characters) of whatever the user types</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'What</span><span class="se">\'</span><span class="s">s your favorite class?'</span><span class="p">)</span>
+<span class="n">className</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">className</span><span class="p">,</span> <span class="s">'sounds like a fun class to me!'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="is-everything-a-string">Is everything a string?</h2>
+
+<ul>
+  <li>What if the user is entering a number that you want to add 1 to?</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'How old are you?'</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Next year, you</span><span class="se">\'</span><span class="s">ll be '</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>… results in …</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Traceback (most recent call last): 
+  File "main.py", line 3, in &lt;module&gt;
+    age = age + 1
+TypeError: can only concatenate str (not "int") to str
+</code></pre></div></div>
+
+<h2 id="data-types">Data Types</h2>
+
+<ul>
+  <li>Every ‘thing’ in a Python program has a <strong>Data Type</strong></li>
+  <li>You can think of it as <strong>metadata</strong> describing what operations I can perform on it</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">someVar1</span> <span class="o">=</span> <span class="s">'123'</span>
+<span class="n">someVar2</span> <span class="o">=</span> <span class="mi">123</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">'123'</code> is a string
+    <ul>
+      <li>You can’t perform mathematical ops on a string… doesn’t make any sense.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">123</code> is an integer</li>
+</ul>
+
+<h2 id="input-and-type-conversion"><code class="language-plaintext highlighter-rouge">input()</code> and Type Conversion</h2>
+
+<ul>
+  <li>You can use use the <code class="language-plaintext highlighter-rouge">int(...)</code> function to convert from string to integer.
+    <ul>
+      <li>Technical term: <strong>casting</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'How old are you? '</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>Note the alternative way of calling the <code class="language-plaintext highlighter-rouge">input()</code> function</em></li>
+  <li><code class="language-plaintext highlighter-rouge">type(...)</code> will tell you the data type of the thing in parens.</li>
+  <li>If you run this, even if you enter an integer for age, the type will be <code class="language-plaintext highlighter-rouge">'str'</code></li>
+</ul>
+
+<h2 id="more-on-type">More on Type</h2>
+<p>\columnsbegin
+\column{.5\textwidth}</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var01</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">var02</span> <span class="o">=</span> <span class="s">'Mark'</span>
+<span class="n">var03</span> <span class="o">=</span> <span class="mf">3.1415</span> 
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var01</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var02</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var03</span><span class="p">))</span>
+</code></pre></div></div>
+<p>\column{.5\textwidth}
+<strong>Output:</strong></p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'int'&gt;
+&lt;class 'str'&gt;
+&lt;class 'float'&gt;
+</code></pre></div></div>
+<p>\columnsend</p>
+
+<h1 id="errors">Errors</h1>
+
+<h2 id="types-of-errors">Types of Errors</h2>
+
+<ol>
+  <li>Syntax Errors</li>
+  <li>Runtime Errors</li>
+  <li>Logic Errors</li>
+</ol>
+
+<h2 id="syntax-errors">Syntax Errors</h2>
+
+<ul>
+  <li>A <strong>syntax error</strong> is a violation of rules of how one can use the symbols of the language to construct a program.</li>
+  <li>Examples:
+    <ul>
+      <li>improperly nested parentheses
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">print(type('abc)</code></li>
+        </ul>
+      </li>
+      <li>putting two lines of code on one typed line
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">print('Hello') print('World')</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Syntax Errors of a program are caught before any lines of code are actually executed</li>
+</ul>
+
+<h2 id="runtime-errors">Runtime Errors</h2>
+
+<ul>
+  <li>A <strong>runtime error</strong> is one in which the programmer attempts an impossible operation</li>
+  <li>Examples:
+    <ul>
+      <li>mathematical operations on a string
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">'123' + 1</code></li>
+        </ul>
+      </li>
+      <li>division by zero
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">25 / 0</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Runtime Errors are caught when the particular illegal instruction is executed</li>
+  <li>You’ll get an error message from Python usually with information about where the error is.
+    <ul>
+      <li>source file name</li>
+      <li>line number</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="logic-errors">Logic Errors</h2>
+
+<ul>
+  <li>A logic error is an error in the instructions in the program even though the instructions are used correctly according to the rules of Python.</li>
+  <li>Examples:
+    <ul>
+      <li>You multiply two numbers when you really need to add two numbers</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">{.python .run}
+test1 = 90
+test2 = 90
+avg = test1 + test2 / 2
+print (avg)
+</code></p>

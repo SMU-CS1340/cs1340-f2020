@@ -1,0 +1,262 @@
+<h1 id="variables-and-expressions---the-highlights">Variables and Expressions - The Highlights</h1>
+
+<h2 id="assigning-a-value-to-a-var">Assigning a Value to a Var</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s">'CS 1340 - Intro to CS and DS'</span>
+</code></pre></div></div>
+<ul>
+  <li>looks like math <code class="language-plaintext highlighter-rouge">=</code>, but different</li>
+  <li><code class="language-plaintext highlighter-rouge">=</code> is for <strong>assignment</strong></li>
+  <li>the <strong>left hand side</strong> of <code class="language-plaintext highlighter-rouge">=</code> must be a variable.</li>
+  <li>the <strong>right hand side</strong> of <code class="language-plaintext highlighter-rouge">=</code> would be an expression</li>
+  <li>How we would say it:
+    <ul>
+      <li><em>set x to 10</em></li>
+      <li><em>assign x the value of 10</em></li>
+      <li><em>put the course name in y</em></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="identifiers">Identifiers</h2>
+
+<ul>
+  <li>FYI - for now, we’re talking about variable names, but are a little more broad than that</li>
+  <li>Rules for identifiers:
+    <ul>
+      <li>must start with a <strong>letter</strong> or <strong>underscore</strong></li>
+      <li>can contain <strong>letters</strong>, <strong>underscores</strong>, and <strong>digits</strong></li>
+      <li>are <strong>case sensitive</strong>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">cat_name</code> is different from <code class="language-plaintext highlighter-rouge">Cat_NaMe</code></li>
+        </ul>
+      </li>
+      <li>Certain <strong>reserved words</strong> cannot be used as identifier names
+        <ul>
+          <li>examples: <code class="language-plaintext highlighter-rouge">and</code>, <code class="language-plaintext highlighter-rouge">True</code>, <code class="language-plaintext highlighter-rouge">None</code>, <code class="language-plaintext highlighter-rouge">in</code>, etc.  See ZyBooks section 2.2 for complete list</li>
+        </ul>
+      </li>
+      <li>cannot contain spaces</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="identifiers-contd">Identifiers (Cont’d.)</h2>
+
+<ul>
+  <li>Conventions:
+    <ul>
+      <li>don’t start and end an identifier with double underscore
+        <ul>
+          <li>no no! <code class="language-plaintext highlighter-rouge">__init__</code></li>
+          <li>technically legal, but Python gives sometimes uses them with special meanings</li>
+        </ul>
+      </li>
+      <li>Identifiers should be descriptive</li>
+      <li>all lowercase</li>
+      <li>separate words with underscores
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">final_grade</code>, <code class="language-plaintext highlighter-rouge">high_temp</code>, etc.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Where do the conventions come from?
+    <ul>
+      <li><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8 - Style Guide for Python Code</a></li>
+      <li>PEP stands for <strong>Python Enhancement Proposal</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="under-the-hood">Under the Hood</h2>
+
+<ul>
+  <li>Where are variables stored while your program is running?</li>
+</ul>
+
+<p>\begin{center}
+    \includegraphics[width=0.7\textwidth]{./assets/memory2.png}
+\end{center}</p>
+
+<h2 id="under-the-hood---2">Under the Hood - 2</h2>
+
+<ul>
+  <li><strong>object</strong> - represents a value &amp; automatically created by the interpreter when it executes a line of code</li>
+  <li>Everything in Python is an <strong>object</strong></li>
+  <li>When you no longer need an object anymore, the <strong>garbage collector</strong> comes behind and <em>takes out the trash</em>.</li>
+</ul>
+
+<h2 id="objects">Objects</h2>
+
+<ul>
+  <li><strong>Name Binding</strong> - giving a name to an object in memory
+    <ul>
+      <li>an object can have multiple names</li>
+      <li>a name only refers to one object at any point in execution</li>
+      <li>Example: <code class="language-plaintext highlighter-rouge">x = 3</code>… x can never be 3 and 4 at the same time
+        <ul>
+          <li>Said another way: <code class="language-plaintext highlighter-rouge">x</code> can never be referring to two different objects at the same time.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="properties-of-all-objects">Properties of All Objects</h2>
+
+<ol>
+  <li><strong>Value</strong> - the current value of the object… IOW, that data associated with it</li>
+  <li><strong>Type</strong> - the data type of the object (int, string, etc.)
+    <ul>
+      <li><strong>Immutable</strong> - changing the value results in a new object being created (examples: ints and strings)</li>
+      <li><strong>Mutable</strong> - value of the object can be changed directly</li>
+    </ul>
+  </li>
+  <li><strong>Identity</strong> - a unique identifier for the object
+    <ul>
+      <li>Usually refers to the memory address of where the object is stored.</li>
+      <li>We won’t worry about this much</li>
+      <li><code class="language-plaintext highlighter-rouge">id()</code> function will return the id</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="number-time">Number Time</h1>
+
+<h2 id="fp-numbers">FP Numbers</h2>
+
+<ul>
+  <li>FP = <strong>floating point</strong>
+    <ul>
+      <li>number that has a fractional component</li>
+    </ul>
+  </li>
+  <li>FP Literal
+    <ul>
+      <li>include the fractional component even if it is 0.</li>
+      <li><code class="language-plaintext highlighter-rouge">10.3</code>, <code class="language-plaintext highlighter-rouge">3.14159</code>, <code class="language-plaintext highlighter-rouge">10.0</code></li>
+    </ul>
+  </li>
+  <li>For really small or really big things, you can use <strong>scientific notation</strong>
+    <ul>
+      <li>Use <code class="language-plaintext highlighter-rouge">e</code> to precede the exponential part</li>
+      <li>Examples:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">avogadros_number = 6.022e23</code></li>
+          <li><code class="language-plaintext highlighter-rouge">plancks_constant = 6.63e-34</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="too-big-too-small-too-precise">Too Big, Too Small, Too Precise</h2>
+
+<ul>
+  <li>Computers cannot store infinitely large or small numbers.</li>
+  <li><strong>Overflow</strong>: when you try to store a number that is too large
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">2.0**1024</code></li>
+    </ul>
+  </li>
+  <li>Some numbers have too many numbers aver the decimal point
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">pi = 3.14159</code>, an approximation of pi.</li>
+      <li>The computer can only represent a finite amount of precision.</li>
+    </ul>
+  </li>
+  <li>Formatting decimal places when printing:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">print('{:.2f}'.format(myFloat))</code> prints only 2 decimal places of the <code class="language-plaintext highlighter-rouge">myFloat</code> variable.</li>
+      <li>More details on this as we progress</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="expressions">Expressions</h2>
+
+<ul>
+  <li>already talked about this some</li>
+  <li><strong>expression</strong> evaluates to a value</li>
+  <li>Evaluation happens following <strong>precedence rules</strong>
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">()</code></li>
+      <li><code class="language-plaintext highlighter-rouge">**</code> : Exponent</li>
+      <li><code class="language-plaintext highlighter-rouge">-</code> : Unary negation</li>
+      <li><code class="language-plaintext highlighter-rouge">* / %</code> : (<code class="language-plaintext highlighter-rouge">%</code> is like remainder of division)</li>
+      <li><code class="language-plaintext highlighter-rouge">+ -</code></li>
+      <li>left - to - right</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="have-some-style-please">Have Some Style, Please!</h2>
+
+<ul>
+  <li>use a single blank space before and after an operator
+    <ul>
+      <li>NO: <code class="language-plaintext highlighter-rouge">final_average=sum/4</code></li>
+      <li>YES: <code class="language-plaintext highlighter-rouge">final_average = sum / 4</code></li>
+      <li>Makes your code easier to read</li>
+    </ul>
+  </li>
+  <li>An Exception:  unary negation… don’t add a space after it.</li>
+</ul>
+
+<h2 id="compound-assignment">Compound Assignment</h2>
+
+<ul>
+  <li>uses the current value of a variable, applies an operation to it, stores result back in that variable</li>
+  <li>example: <code class="language-plaintext highlighter-rouge">test_grade += 10</code> will add 10 to whatever is already in <code class="language-plaintext highlighter-rouge">test_grade</code> and store the result back in <code class="language-plaintext highlighter-rouge">test_grade</code></li>
+  <li><code class="language-plaintext highlighter-rouge">+=</code></li>
+  <li><code class="language-plaintext highlighter-rouge">-=</code></li>
+  <li><code class="language-plaintext highlighter-rouge">*=</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/=</code></li>
+  <li><code class="language-plaintext highlighter-rouge">%=</code></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test_grade</span> <span class="o">+=</span> <span class="mi">10</span>
+
+<span class="n">test_grade</span> <span class="o">=</span> <span class="n">test_grade</span> <span class="o">+</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<h2 id="no-commas">No Commas</h2>
+
+<ul>
+  <li>don’t put commas in numbers, period.</li>
+  <li>NO: <code class="language-plaintext highlighter-rouge">2,000,000</code></li>
+  <li>YES: <code class="language-plaintext highlighter-rouge">2000000</code></li>
+</ul>
+
+<h2 id="dividing-the-pie">Dividing the Pie</h2>
+
+<ul>
+  <li>2 types of division
+    <ul>
+      <li><strong>FP division</strong> - single <code class="language-plaintext highlighter-rouge">/</code> - returns floating point result of division</li>
+      <li><strong>Integer Division</strong> - double ‘//` - returns only the integer portion of the result.
+        <ul>
+          <li>Said another way: returns the floor of FP division</li>
+          <li><code class="language-plaintext highlighter-rouge">10 // 3</code> is 3.</li>
+          <li><code class="language-plaintext highlighter-rouge">10 / 3</code> is 3.33333333333333</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Reminder, you can’t divide by zero and neither can your computer.</li>
+</ul>
+
+<h2 id="the-leftovers">The Leftovers</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">%</code> - the <strong>modulo operator</strong>
+    <ul>
+      <li>returns the remainder of division of two integer operands</li>
+      <li><code class="language-plaintext highlighter-rouge">10 % 5 = 0</code></li>
+      <li><code class="language-plaintext highlighter-rouge">10 % 3 = 1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">3 % 10 = 3</code></li>
+    </ul>
+  </li>
+</ul>

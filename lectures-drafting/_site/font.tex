@@ -1,0 +1,48 @@
+% \usepackage{libertine}
+% \usepackage[T1]{fontenc}
+
+% \usepackage{enumitem}
+% \usepackage{amsfonts}
+% % level one
+% \setlist[itemize,1]{label=$\bullet$}
+% % level two
+% \setlist[itemize,2]{label=$\circ$}
+% % level three
+% \setlist[itemize,3]{label=$\star$}
+
+% \usepackage{fontspec}
+% \setromanfont[Mapping=tex-text,Numbers=Lining]{Linux Libertine O}
+% \setmonofont[Scale=MatchLowercase]{DejaVu Sans Mono}
+% \usepackage[libertine]{newtxmath}
+
+\setbeamertemplate{itemize items}[circle]
+
+\usepackage{tcolorbox}
+\newtcolorbox{myquote}{colback=blue!5!white, colframe=blue!5!white}
+
+\renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily}
+\newcommand{\CodeEmphasis}[1]{\textcolor{red}{\textit{#1}}}
+\newcommand{\CodeEmphasisLine}[1]{\textcolor{red}{\textit{#1}}}
+
+
+% How to add columns into MD that translate to beamer
+% https://stackoverflow.com/questions/15142134/slides-with-columns-in-pandoc
+%
+% \columnsbegin
+% \column{.5\textwidth}
+
+% ~~~~~~~~Python
+% >>> some python code
+% ~~~~~~~
+
+% \column{.5\textwidth}
+
+% ![](A_generated_image.pdf)
+
+% \columnsend 
+
+\newcommand{\columnsbegin}{\begin{columns}}
+\newcommand{\columnsend}{\end{columns}}
